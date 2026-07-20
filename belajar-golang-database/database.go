@@ -7,7 +7,7 @@ import (
 
 // Membuat Function Koneksi agar tidak perlu deklarasi terus menerus.
 func GetConnection() *sql.DB {
-	db, err := sql.Open("mysql", "Izatar:@tcp(localhost:3306)/belajar_golang_database") // Validasi Format Argument benar, belum koneksi fisik.
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/belajar_golang_database?parseTime=true") // Validasi Format Argument benar, belum koneksi fisik. parseTime=true diperlukan untuk menangani tipe data date, datetime, timestamp secara otomatis diparsing di Golang.
 
 	if err != nil {
 		panic(err)
